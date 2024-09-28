@@ -1,10 +1,15 @@
 ---
 import HeroSection from "../components/HeroSection.astro";
+import IndexNavigation from "../components/IndexNavigation.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Be Water - The Flowing Timeline of Bruce Lee">
-  <HeroSection />
-  <Footer />
+<Layout
+  title="Be Water - The Flowing Timeline of Bruce Lee"
+  description="An interactive look at the life and times of Bruce Lee."
+>
+  <div class="px-12">
+    <HeroSection />
+    <IndexNavigation />
+  </div>
 </Layout>
