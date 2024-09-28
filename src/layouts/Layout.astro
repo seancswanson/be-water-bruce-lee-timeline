@@ -1,51 +1,40 @@
 ---
+import { SEO } from "astro-seo";
+
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import "@fontsource/pt-serif";
-
-import { seo, author, book } from "../config.json";
 ---
 
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title: title,
+          type: "website",
+          image:
+            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        },
+      }}
+      twitter={{
+        creator: "@sean_tha_swan",
+      }}
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href={seo.canonical} />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
-    <meta name="description" content={seo.description} />
-    <meta property="og:url" content={seo.canonical} />
-    <meta property="og:title" content={seo.title} />
-    <meta property="og:description" content={seo.description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={seo.canonical + seo.image} />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="600" />
-    <meta property="og:site_name" content={seo.title} />
-    <meta property="og:locale" content={seo.locale} />
 
-    <meta property="og:type" content="book" />
-    <meta property="book:author" content={author.name} />
-    <meta property="book:isbn" content={book.isbn} />
-    <meta property="book:release_date" content={book.releaseDate} />
-
-    <meta property="og:type" content="product" />
-    <meta property="product:price:amount" content={book.price} />
-    <meta property="product:price:currency" content={book.currency} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={seo.title} />
-    <meta name="twitter:description" content={seo.description} />
-
-    <title>{seo.title}</title>
-
-    <!-- Google tag (gtag.js) -->
     <script
       type="text/partytown"
       async
