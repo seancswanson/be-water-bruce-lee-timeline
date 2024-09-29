@@ -2,6 +2,8 @@
 import { SEO } from "astro-seo";
 import { ViewTransitions } from "astro:transitions";
 import "../styles/global.scss";
+import "@fontsource-variable/noto-serif-sc";
+
 import Footer from "../components/Footer.astro";
 
 export interface Props {
@@ -10,11 +12,10 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
-import "@fontsource/pt-serif";
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <SEO
       title={title}
@@ -70,7 +71,7 @@ import "@fontsource/pt-serif";
   </head>
   <body>
     <div class="grain-overlay"></div>
-    <main>
+    <main class="h-full">
       <slot />
     </main>
     <Footer />

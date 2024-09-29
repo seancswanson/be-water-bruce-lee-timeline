@@ -50,7 +50,7 @@
 }
 
 html {
-  font-family: "Noto Serif HK Variable", system-ui, serif;
+  font-family: "Noto Serif SC Variable", system-ui, serif;
   /* font-family: Georgia, "Times New Roman", Times, serif; */
   height: 100vh;
   background-color: var(--background-color);
@@ -64,8 +64,15 @@ body {
   height: 100%;
 }
 code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
 }
 
 html {

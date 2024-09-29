@@ -1,1 +1,22 @@
-<footer class="h-24"></footer>
+---
+import { Image } from "astro:assets";
+import swansong from "../icons/swansong-thick-24.png";
+---
+
+<footer class="h-12">
+  <div class="flex items-center justify-center gap-4">
+    <a
+      href="https://seancswanson.com"
+      target="_blank"
+      rel="noreferrer"
+      class="flex items-center text-xs italic text-center rounded"
+    >
+      <span class="inline-block mr-2">made with ♡ by SDA</span>
+      <Image
+        src={swansong}
+        alt="swanson digital arts logo"
+        class="inline-block"
+      />
+    </a>
+  </div>
+</footer>

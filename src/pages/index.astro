@@ -1,6 +1,8 @@
 ---
-import HeroSection from "../components/HeroSection.astro";
-import IndexNavigation from "../components/IndexNavigation.astro";
+import { Image } from "astro:assets";
+import Bruce from "../img/bruce_portrait_edits.png";
+import BruceSignature from "../img/bruce_signature.png";
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -8,8 +10,48 @@ import Layout from "../layouts/Layout.astro";
   title="Be Water - The Flowing Timeline of Bruce Lee"
   description="An interactive look at the life and times of Bruce Lee."
 >
-  <div class="px-12">
-    <HeroSection />
-    <IndexNavigation />
-  </div>
+  <section
+    class="flex flex-col-reverse justify-end md:justify-between md:h-full h-full gap-12 md:gap-0 md:max-h-[75vh] md:flex-row px-12"
+  >
+    <div id="text" class="flex flex-col gap-10 place-content-center md:w-1/2">
+      <div class="flex flex-col gap-1">
+        <h1 class="text-6xl font-bold">BE WATER:</h1>
+        <span class="text-lg italic font-[300] tracking-wider opacity-90"
+          >The Flowing Timeline of Bruce Lee</span
+        >
+      </div>
+      <div class="flex flex-col gap-4">
+        <span class="text-sm tracking-wider opacity-90"
+          >Be Water is an interactive journey through the extraordinary life of
+          the legendary martial artist, actor, and philosopher. From his birth
+          in San Francisco in 1940 to his untimely death in Hong Kong in 1973,
+          this timeline explores the pivotal moments, relationships, and
+          artistic works that shaped Bruce Lee's legacy.
+        </span>
+        <span class="text-sm tracking-wider opacity-90"
+          >Discover how Lee revolutionized martial arts, broke barriers in
+          Hollywood, and left an indelible mark on global popular culture
+          through his innovative philosophies and groundbreaking performances.</span
+        >
+      </div>
+      <a
+        href="/explore/timeline"
+        class="text-sm font-[300] tracking-wider w-fit gap-2 opacity-90 flex items-center"
+        ><span class="underline underline-offset-2">Start Exploring </span>
+        <Icon name="right-arrow" />
+      </a>
+    </div>
+    <div
+      class="image max-h-[70vh] w-1/2 max-w-[200px] md:max-w-[400px] self-end"
+    >
+      <figure class="relative">
+        <Image src={Bruce} alt="Bruce Lee Portrait" />
+        <Image
+          src={BruceSignature}
+          class="absolute bottom-[-30px] max-width-[270px] left-1/2 translate-x-[-50%]"
+          alt="Bruce Lee Signature"
+        />
+      </figure>
+    </div>
+  </section>
 </Layout>
