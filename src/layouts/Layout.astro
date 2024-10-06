@@ -9,9 +9,10 @@ import Footer from "../components/Footer.astro";
 export interface Props {
   title: string;
   description: string;
+  moveDown: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, moveDown } = Astro.props;
 ---
 
 <!doctype html>
@@ -66,12 +67,38 @@ const { title, description } = Astro.props;
         background-size: 150px;
         opacity: 0.1;
         z-index: 999;
+        animation: all ease 2s;
+      }
+
+      .grain-overlay.move-down {
+        @apply sm:top-[50px] top-[200px];
+      }
+
+      .corner-frame {
+        position: absolute;
+        height: 10vh;
+        width: 2vw;
+      }
+
+      .corner-frame--top {
+        left: 1%;
+        top: 1%;
+        border-left: 0 solid black;
+        border-top: 0 solid black;
+      }
+      .corner-frame--bottom {
+        right: 1%;
+        bottom: 1%;
+        border-right: 0 solid black;
+        border-bottom: 0 solid black;
       }
     </style>
   </head>
-  <body>
-    <div class="grain-overlay"></div>
-    <main class="h-full">
+  <body class="flex flex-col justify-between">
+    <div class=`${moveDown ? 'move-down' : '' } grain-overlay`></div>
+    <div class="corner-frame corner-frame--top"></div>
+    <div class="corner-frame corner-frame--bottom"></div>
+    <main>
       <slot />
     </main>
     <Footer />

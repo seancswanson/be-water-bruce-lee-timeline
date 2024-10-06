@@ -9,33 +9,60 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title="Be Water - The Flowing Timeline of Bruce Lee"
   description="An interactive look at the life and times of Bruce Lee."
+  moveDown={false}
+  ;
 >
   <section
-    class="flex flex-col-reverse justify-end md:justify-between md:h-full h-full gap-12 md:gap-0 md:max-h-[75vh] md:flex-row px-12"
+    class="flex flex-col-reverse justify-end md:justify-between h-full gap-12 md:gap-0 md:max-h-[95vh] md:flex-row px-12"
   >
-    <div id="text" class="flex flex-col gap-10 place-content-center md:w-1/2">
-      <div class="flex flex-col gap-1">
-        <h1 class="text-6xl font-bold">BE WATER:</h1>
-        <span class="text-lg italic font-[300] tracking-wider opacity-90"
-          >The Flowing Timeline of Bruce Lee</span
+    <div id="text" class="flex flex-col gap-10 md:mt-8 md:w-1/2">
+      <div class="flex flex-col gap-1 relative text-center">
+        <h1 class="text-6xl font-bold" id="title">BE WATER:</h1>
+        <span
+          class="text-lg italic font-[300] tracking-wider opacity-90"
+          id="subtitle">The Flowing Timeline of Bruce Lee</span
+        >
+        <span
+          id="be-water-cn"
+          class="absolute text-[6em] md:text-[9em] -translate-x-1/2 text-gray-300 z-[-1] -translate-y-1/2 top-1/2 left-1/2"
+          >如水</span
         >
       </div>
       <div class="flex flex-col gap-4">
         <span class="text-sm tracking-wider opacity-90"
-          >Be Water is an interactive journey through the extraordinary life of
-          the legendary martial artist, actor, and philosopher. From his birth
-          in San Francisco in 1940 to his untimely death in Hong Kong in 1973,
-          this timeline explores the pivotal moments, relationships, and
-          artistic works that shaped Bruce Lee's legacy.
+          >Be Water is an <strong>interactive journey</strong> through the <strong
+            >extraordinary life</strong
+          > of the <strong
+            >legendary martial artist, actor, and philosopher</strong
+          >. From his birth in San Francisco in 1940 to his untimely death in
+          Hong Kong in 1973, this timeline explores the <strong
+            >pivotal moments, relationships, and artistic works</strong
+          > that shaped Bruce Lee's legacy.
         </span>
         <span class="text-sm tracking-wider opacity-90"
-          >Discover how Lee revolutionized martial arts, broke barriers in
-          Hollywood, and left an indelible mark on global popular culture
-          through his innovative philosophies and groundbreaking performances.</span
+          >Discover how Lee <strong>revolutionized martial arts</strong>, <strong
+            >broke barriers</strong
+          > in Hollywood, and left an <strong
+            >indelible mark on global popular culture</strong
+          >
+          through his <strong>innovative philosophies</strong> and <strong
+            >groundbreaking performances</strong
+          >.</span
+        >
+        <span class="text-sm tracking-wider opacity-90"
+          >This project is not affiliated with Bruce Lee nor <a
+            href="https://bruceleefoundation.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline">The Bruce Lee Family Foundation</a
+          >. It is an independent endeavor for education and skill development
+          purposes only. We encourage you to support and visit the official
+          Bruce Lee Foundation to learn more about Bruce Lee's legacy and
+          ongoing impact worldwide.</span
         >
       </div>
       <a
-        href="/explore/timeline"
+        href="/explore"
         class="text-sm font-[300] tracking-wider w-fit gap-2 opacity-90 flex items-center"
         ><span class="underline underline-offset-2">Start Exploring </span>
         <Icon name="right-arrow" />
@@ -55,3 +82,17 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 </Layout>
+
+<style>
+  #be-water-cn {
+    text-shadow: 4px 2px 0px black;
+    filter: blur(0.6px);
+    opacity: 0.3;
+    word-break: keep-all;
+  }
+
+  #title,
+  #subtitle {
+    text-shadow: 2px 4px 2px white;
+  }
+</style>

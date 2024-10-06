@@ -1,14 +1,12 @@
 ---
-import TopNav from "../../components/TopNav.astro";
 import Layout from "../../layouts/Layout.astro";
+import ExploreWrapper from "../../components/explore/ExploreWrapper.svelte";
+
+const title = "Explore Bruce Lee's Legacy";
+const description =
+  "Interactively explore the life and legacy of Bruce Lee through a dynamic timeline, connections, and grid view.";
 ---
 
-<Layout
-  title="Be Water - The Flowing Timeline of Bruce Lee"
-  description="An interactive look at the life and times of Bruce Lee."
->
-  <TopNav />
-  <section class="px-12">
-    <h1>Explore</h1>
-  </section>
+<Layout title={title} description={description} moveDown={true}>
+  <ExploreWrapper client:load />
 </Layout>
