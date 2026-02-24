@@ -60,7 +60,11 @@
   });
 </script>
 
-<TopNav setModeIndexCallback={setModeIndex} />
+<TopNav
+  setModeIndexCallback={setModeIndex}
+  {modes}
+  currentModeIndex={activeModeIndex}
+/>
 
 <section>
   <div bind:this={container} id="explore-container">
@@ -72,11 +76,9 @@
   #explore-container {
     border: 1px solid black;
     width: 100%;
-    height: 600px; /* Adjust as needed */
+    height: 600px;
   }
-  .mode-buttons {
-    margin-top: 20px;
-  }
+
   button {
     margin-right: 10px;
     padding: 5px 10px;
